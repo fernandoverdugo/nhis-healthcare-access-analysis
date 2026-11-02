@@ -142,7 +142,7 @@ Respondent-level processed intermediates are reproducible but intentionally excl
 
 ## Reproduce the project
 
-The repository targets **Python 3.15** and pins the tested dependency set in `requirements.txt`.
+The repository supports **Python 3.14+** and was developed and locally validated on Python 3.15. GitHub Actions uses Python 3.14 for reliable binary-wheel availability with the pinned scientific stack.
 
 ```bash
 python3 -m venv .venv
