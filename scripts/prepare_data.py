@@ -238,4 +238,73 @@ def build_modeling_base(adult_analysis):
         "PPSU",
         *EXPANDED_MODEL_COLUMNS,
     ]
-    return adult_analysis%¶6öÇ5Òæ6÷’‚  ¦FVb'V–ÆEö–æ6öÖUö–×WFF–öç2†–æ6öÖR“ ¢÷WBÒ–æ6öÖUµ²$„…‚"Â$”ÕåTÕô"Â%õe$ED5ô"Â%$D4Eô%ÕÒæ6÷’‚¢÷WBÒ÷WBç6÷'E÷fÇVW2…²$„…‚"Â$”ÕåTÕô%Ò’ç&W6WEö–æFW‚†G&÷ÕG'VR¢&WGW&â÷W@  ¦FVb'V–ÆE÷f&–&ÆUöF–7F–öæ'’‚“ ¢&WGW&âBäFFg&ÖR€¢d$”$ÄUôD”5D”ôä%’À¢6öÇVÖç3Õ²'6÷W&6U÷f&–&ÆR"Â&g&–VæFÇ•öæÖR"Â&FW67&—F–öâ"Â'&öÆR"Â'G&VFÖVçB%ÒÀ¢  ¦FVbvV–v‡FVE÷&WfÆVæ6R‡fÇVW2ÂvV–v‡G2“ ¢Ö6²ÒfÇVW2ææ÷Fæ‚’bvV–v‡G2ææ÷Fæ‚¢–bæ÷BÖ6²æç’‚“ ¢&WGW&âçææà¢&WGW&âfÆöB†çæfW&vR‡fÇVW2æÆö5¶Ö6µÒæ7G—R†fÆöB’ÂvV–v‡G3×vV–v‡G2æÆö5¶Ö6µÒæ7G—R†fÆöB’’  ¦FVb'V–ÆE÷7VÖÖ'’†GVÇEöæÇ—6—2Â–æ6öÖUö–×WFF–öç2“ ¢fÆ–E÷F&vWBÒGVÇEöæÇ—6—5²&FVÆ–VEö6&Uö6÷7B%ÒæG&÷æ‚¢7VÖÖ'’Ò°¢&GVÇE÷&÷w2#¢–çB†ÆVâ†GVÇEöæÇ—6—2’’À¢'Væ—VUöGVÇG2#¢–çB†GVÇEöæÇ—6—5²$„…‚%ÒæçVæ—VR‚’’À¢&–æ6öÖU÷&÷w2#¢–çB†ÆVâ†–æ6öÖUö–×WFF–öç2’’À¢&–æ6öÖUö–×WFF–öç5÷W%öGVÇB#¢–çB†–æ6öÖUö–×WFF–öç2æw&÷W'’‚$„…‚"Âö'6W'fVCÕG'VR’ç6—¦R‚’æ–Æö5³Ò’À¢'F&vWE÷fÆ–E÷&÷w2#¢–çB‡fÆ–E÷F&vWBç6†U³Ò’À¢'F&vWE÷÷6—F—fU÷&÷w2#¢–çB‚‡fÆ–E÷F&vWBÓÒ’ç7VÒ‚’’À¢'F&vWEöæVvF—fU÷&÷w2#¢–çB‚‡fÆ–E÷F&vWBÓÒ’ç7VÒ‚’’À¢'F&vWE÷VçvV–v‡FVE÷&WfÆVæ6R#¢fÆöB‡fÆ–E÷F&vWBæÖVâ‚’’À¢'F&vWE÷vV–v‡FVE÷ö–çEöW7F–ÖFR#¢vV–v‡FVE÷&WfÆVæ6R€¢GVÇEöæÇ—6—5²&FVÆ–VEö6&Uö6÷7B%ÒÂGVÇEöæÇ—6—5²%uDdô%Ğ¢’À¢'6V6öæF'•÷÷6—F—fU÷&÷w2#¢–çB‚†GVÇEöæÇ—6—5²&f÷&vöæUö6&Uö6÷7B%ÒÓÒ’ç7VÒ‚’’À¢&–æ6öÖUö–×WFF–öåöçVÖ&W'2#¢6÷'FVB€¢–æ6öÖUö–×WFF–öç5²$”ÕåTÕô%ÒæG&÷æ‚’æ7G—R†–çB’çVæ—VR‚’çFöÆ—7B‚¢’À¢&æ÷FR#¢%vV–v‡FVB&WfÆVæ6R—2ö–çBW7F–ÖFRöæÇ“²7W'fW’ÖFW6–vâf&–æ6RW7F–ÖF–öâ—2†æFÆVB–âF†R7FF—7F–6ÂÖæÇ—6—27FvRâ"À¢Ğ¢&WGW&â7VÖÖ'  ¦FVb&W&UöFF‚“ ¢$ô4U54TEôD•"æÖ¶F—"‡&VçG3ÕG'VRÂW†—7Eöö³ÕG'VR¢GVÇBÂ–æ6öÖRÒÆöE÷6÷W&6UöFF‚¢fÆ–FFU÷6÷W&6UöFF†GVÇBÂ–æ6öÖR ¢GVÇEöæÇ—6—2Ò'V–ÆEöGVÇEöæÇ—6—2†GVÇB¢ÖöFVÆ–æuö&6RÒ'V–ÆEöÖöFVÆ–æuö&6R†GVÇEöæÇ—6—2¢–æ6öÖUö–×WFF–öç2Ò'V–ÆEö–æ6öÖUö–×WFF–öç2†–æ6öÖR¢f&–&ÆUöF–7F–öæ'’Ò'V–ÆE÷f&–&ÆUöF–7F–öæ'’‚¢7VÖÖ'’Ò'V–ÆE÷7VÖÖ'’†GVÇEöæÇ—6—2Â–æ6öÖUö–×WFF–öç2 ¢GVÇEöæÇ—6—2çFõö77b…$ô4U54TEôD•"ò&GVÇEöæÇ—6—2æ77b"Â–æFWƒÔfÇ6R¢ÖöFVÆ–æuö&6RçFõö77b…$ô4U54TEôD•"ò&ÖöFVÆ–æuö&6Ræ77b"Â–æFWƒÔfÇ6R¢–æ6öÖUö–×WFF–öç2çFõö77b…$ô4U54TEôD•"ò&–æ6öÖUö–×WFF–öç2æ77b"Â–æFWƒÔfÇ6R¢f&–&ÆUöF–7F–öæ'’çFõö77b…$ô4U54TEôD•"ò'f&–&ÆUöF–7F–öæ'’æ77b"Â–æFWƒÔfÇ6R¢…$ô4U54TEôD•"ò&FF÷7VÖÖ'’æ§6öâ"’çw&—FU÷FW‡B†§6öâæGV×2‡7VÖÖ'’Â–æFVçCÓ"’²%Æâ" ¢&WGW&â7VÖÖ'  ¦–bõöæÖUõòÓÒ%õöÖ–åõò# ¢&W7VÇBÒ&W&UöFF‚¢&–çB†§6öâæGV×2‡&W7VÇBÂ–æFVçCÓ"’ 
+    return adult_analysis[cols].copy()
+
+
+def build_income_imputations(income):
+    out = income[["HHX", "IMPNUM_A", "POVRATTC_A", "RATCAT_A"]].copy()
+    out = out.sort_values(["HHX", "IMPNUM_A"]).reset_index(drop=True)
+    return out
+
+
+def build_variable_dictionary():
+    return pd.DataFrame(
+        VARIABLE_DICTIONARY,
+        columns=["source_variable", "friendly_name", "description", "role", "treatment"],
+    )
+
+
+def weighted_prevalence(values, weights):
+    mask = values.notna() & weights.notna()
+    if not mask.any():
+        return np.nan
+    return float(np.average(values.loc[mask].astype(float), weights=weights.loc[mask].astype(float)))
+
+
+def build_summary(adult_analysis, income_imputations):
+    valid_target = adult_analysis["delayed_care_cost"].dropna()
+    summary = {
+        "adult_rows": int(len(adult_analysis)),
+        "unique_adults": int(adult_analysis["HHX"].nunique()),
+        "income_rows": int(len(income_imputations)),
+        "income_imputations_per_adult": int(income_imputations.groupby("HHX").size().iloc[0]),
+        "target_valid_rows": int(valid_target.shape[0]),
+        "target_positive_rows": int((valid_target == 1).sum()),
+        "target_negative_rows": int((valid_target == 0).sum()),
+        "target_unweighted_prevalence": float(valid_target.mean()),
+        "target_weighted_point_estimate": weighted_prevalence(
+            adult_analysis["delayed_care_cost"], adult_analysis["WTFA_A"]
+        ),
+        "secondary_positive_rows": int((adult_analysis["forgone_care_cost"] == 1).sum()),
+        "income_imputation_numbers": sorted(
+            income_imputations["IMPNUM_A"].dropna().astype(int).unique().tolist()
+        ),
+        "note": "Weighted prevalence is a point estimate only; survey-design variance estimation is handled in the statistical-analysis stage.",
+    }
+    return summary
+
+
+def prepare_data():
+    PROCESSED_DIR.mkdir(parents=True, exist_ok=True)
+    adult, income = load_source_data()
+    validate_source_data(adult, income)
+
+    adult_analysis = build_adult_analysis(adult)
+    modeling_base = build_modeling_base(adult_analysis)
+    income_imputations = build_income_imputations(income)
+    variable_dictionary = build_variable_dictionary()
+    summary = build_summary(adult_analysis, income_imputations)
+
+    adult_analysis.to_csv(PROCESSED_DIR / "adult_analysis.csv", index=False)
+    modeling_base.to_csv(PROCESSED_DIR / "modeling_base.csv", index=False)
+    income_imputations.to_csv(PROCESSED_DIR / "income_imputations.csv", index=False)
+    variable_dictionary.to_csv(PROCESSED_DIR / "variable_dictionary.csv", index=False)
+    (PROCESSED_DIR / "data_summary.json").write_text(json.dumps(summary, indent=2) + "
+")
+
+    return summary
+
+
+if __name__ == "__main__":
+    result = prepare_data()
+    print(json.dumps(result, indent=2))
