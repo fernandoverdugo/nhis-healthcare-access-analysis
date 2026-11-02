@@ -119,7 +119,8 @@ Reviews the nonlinear benchmark through permutation importance, weighted calibra
 â”‚   â”‚   â”œâ”€â”€ boosting_permutation_importance.csv
 â”‚   â”‚   â”œâ”€â”€ boosting_calibration.csv
 â”‚   â”‚   â”œâ”€â”€ boosting_risk_deciles.csv
-â”‚   â”‚   â””â”€â”€ â€¦â”‚   â””â”€â”€ README.md
+â”‚   â”‚   â””â”€â”€ ...
+â”‚   â””â”€â”€ README.md
 â”œâ”€â”€ notebooks/
 â”‚   â”œâ”€â”€ 01_exploratory_analysis.ipynb
 â”‚   â”œâ”€â”€ 02_survey_and_modeling_analysis.ipynb
@@ -133,4 +134,81 @@ Reviews the nonlinear benchmark through permutation importance, weighted calibra
 â”œâ”€â”€ tests/
 â”œâ”€â”€ DATA_USE.md
 â”œâ”€â”€ LICENSE
-â”œâ”€â”€É•ÅÕ¥É•µ•¹ÑÌ¹ÑáĞ+ŠRSŠRŠR I5¹µ)€()I•ÍÁ½¹‘•¹Ğµ±•Ù•°ÁÉ½•ÍÍ•¥¹Ñ•Éµ•‘¥…Ñ•Ì…É”É•ÁÉ½‘Õ¥‰±”‰ÕĞ¥¹Ñ•¹Ñ¥½¹…±±ä•á±Õ‘•™É½´¥Ğ¡¥ÍÑ½Éä¸Q¡”É•Á½Í¥Ñ½ÉäÉ•Ñ…¥¹Ì½¹±ä…É•…Ñ”½µ½‘•°µÍÕµµ…Éä…¹…±åÑ¥…°½ÕÑÁÕÑÌ¹••‘•Ñ¼É•Ù¥•ÜÑ¡”É•ÍÕ±ÑÌ¸((ŒŒI•ÁÉ½‘Õ”Ñ¡”ÁÉ½©•Ğ()Q¡”É•Á½Í¥Ñ½ÉäÑ…É•ÑÌ€¨©AåÑ¡½¸€Ì¸ÄÔ¨¨…¹Á¥¹ÌÑ¡”Ñ•ÍÑ•‘•Á•¹‘•¹äÍ•Ğ¥¸É•ÅÕ¥É•µ•¹ÑÌ¹ÑáÑ€¸()‰…Í )ÁåÑ¡½¸Ì€µ´Ù•¹Ø€¹Ù•¹Ø)Í½ÕÉ”€¹Ù•¹Ø½‰¥¸½…Ñ¥Ù…Ñ”)ÁåÑ¡½¸€µ´Á¥À¥¹ÍÑ…±°€´µÕÁÉ…‘”Á¥À)ÁåÑ¡½¸€µ´Á¥À¥¹ÍÑ…±°€µÈÉ•ÅÕ¥É•µ•¹ÑÌ¹ÑáĞ)€()½İ¹±½…Ñ¡”Ñİ¼½™™¥¥…°€ÈÀÈÔ9!%LÁÕ‰±¥ŒµÕÍ”™¥±•Ì…¹Ù•É¥™äÑ¡•´……¥¹ÍĞÑ¡”9!LµÁÕ‰±¥Í¡•5Ô¡•­ÍÕµÌè()‰…Í )ÁåÑ¡½¸ÍÉ¥ÁÑÌ½‘½İ¹±½…‘}‘…Ñ„¹Áä)€()IÕ¸Ñ¡”½µÁ±•Ñ”…¹…±åÑ¥…°Á¥Á•±¥¹”è()‰…Í )ÁåÑ¡½¸ÍÉ¥ÁÑÌ½ÉÕ¹}Á¥Á•±¥¹”¹Áä)€()IÕ¸Ñ¡”Ù…±¥‘…Ñ¥½¸ÍÕ¥Ñ”è()‰…Í )ÁåÑ¡½¸€µ´ÁåÑ•ÍĞ€µÄ€µÀ¹¼é…¡•ÁÉ½Ù¥‘•È)€()=Á•¸Ñ¡”¹½Ñ•‰½½­Ì±½…±±äİ¥Ñ è()‰…Í )©ÕÁåÑ•È±…ˆ)€()¥Ñ!ÕˆÑ¥½¹ÌÉ•Á•…ÑÌÍ½ÕÉ”‘½İ¹±½…½¡•­ÍÕ´Ù•É¥™¥…Ñ¥½¸°Ñ¡”…¹…±åÑ¥…°É•‰Õ¥±°…¹Ñ¡”™Õ±°Ù…±¥‘…Ñ¥½¸ÍÕ¥Ñ”½¸•Ù•ÉäÁÕÍ ½ÈÁÕ±°É•ÅÕ•ÍĞ¸((ŒŒ5•Ñ¡½‘½±½¥…°Õ…É‘É…¥±Ì((ŒŒŒ½µÁ±•àÍÕÉÙ•ä¥¹™•É•¹”()A½ÁÕ±…Ñ¥½¸•ÍÑ¥µ…Ñ•ÌÕÍ”è((´]Q}€ƒŠP™¥¹…°…¹¹Õ…°M…µÁ±”‘Õ±Ğİ•¥¡Ğ(´AMQIQ€ƒŠP…¹¹Õ…°ÁÕ‰±¥ŒÙ…É¥…¹”ÍÑÉ…ÑÕ´(´AAMU€ƒŠP…¹¹Õ…°ÁÕ‰±¥ŒÙ…É¥…¹”AMT()MÕ‰É½ÕÀ•ÍÑ¥µ…Ñ•Ì…É”ÑÉ•…Ñ•…ÌÍÕÉÙ•ä‘½µ…¥¹ÌÉ…Ñ¡•ÈÑ¡…¸¥¹‘•Á•¹‘•¹ĞÍ¥µÁ±”É…¹‘½´Í…µÁ±•Ì¸½¹™¥‘•¹”¥¹Ñ•ÉÙ…±ÌÕÍ”Q…å±½Èµ±¥¹•…É¥é•Ù…É¥…¹•Ì…¹ÁÕ‰±¥Œµ‘•Í¥¸‘•É••Ì½˜™É••‘½´¸((ŒŒŒ5Õ±Ñ¥Á±”¥µÁÕÑ…Ñ¥½¸()Q¡”½É‘¥¹…ÉäM…µÁ±”‘Õ±Ğ™¥±”½¹Ñ…¥¹ÌÁ½Ù•ÉÑäµ•…ÍÕÉ•Ì‰…Í•½¸Ñ¡”€¨©™¥ÉÍĞ¨¨¥µÁÕÑ…Ñ¥½¸¸Q¡¥ÌÁÉ½©•Ğ¥¹ÍÑ•…ÕÍ•ÌÑ¡”Í•Á…É…Ñ”M…µÁ±”‘Õ±Ğ%¹½µ”™¥±”…¹É•Ñ…¥¹Ì…±°€¨¨ÄÀ¨¨¥µÁÕÑ…Ñ¥½¹Ì¸()%¹½µ”µ‘•Á•¹‘•¹ĞÍÕÉÙ•ä•ÍÑ¥µ…Ñ•Ì…É”½µÁÕÑ•¥¸•… ½µÁ±•Ñ•‘…Ñ…Í•Ğ…¹Á½½±•ÕÍ¥¹œİ¥Ñ¡¥¸´…¹‰•Ñİ••¸µ¥µÁÕÑ…Ñ¥½¸Ù…É¥…¹”İ¥Ñ Ñ¡”	…É¹…É“ŠMIÕ‰¥¸‘•É••Ìµ½˜µ™É••‘½´…‘©ÕÍÑµ•¹Ğ¸½ÈÁÉ•‘¥Ñ¥Ù”µ½‘•±¥¹œ°¥¹½µ”µ•¹¡…¹•µ½‘•±Ì…É”É•™¥ĞÍ•Á…É…Ñ•±ä…É½ÍÌ…±°€ÄÀ½µÁ±•Ñ•‘…Ñ…Í•ÑÌ°…¹Á•É™½Éµ…¹”Ù…É¥…Ñ¥½¸¥ÌÉ•Á½ÉÑ•…Ì„Í•¹Í¥Ñ¥Ù¥Ñä…¹…±åÍ¥Ì¸Q¡”€ÄÀ¥µÁÕÑ•É•½É‘Ì…É”¹•Ù•ÈÑÉ•…Ñ•…Ì€ÄÀ‘¥™™•É•¹ĞÉ•ÍÁ½¹‘•¹ÑÌ¸((ŒŒŒAÉ•‘¥Ñ¥Ù”µ½‘•±¥¹œ¥Ì¹½Ğ…ÕÍ…°¥¹™•É•¹”()Q¡”ÁÉ•‘¥Ñ¥Ù”µ½‘•±Ì…É”•Ù…±Õ…Ñ•…ÌÉ¥Í¬µÉ…¹­¥¹œÑ½½±Ì¸MÕÉÙ•äİ•¥¡ÑÌ…É”ÕÍ•…Ìµ½‘•°½•Ù…±Õ…Ñ¥½¸Í…µÁ±”İ•¥¡ÑÌ°‰ÕĞ±½¥ÍÑ¥Œ½•™™¥¥•¹ÑÌ…¹‰½½ÍÑ¥¹œ™•…ÑÕÉ”¥µÁ½ÉÑ…¹”…É”€¨©¹½Ğ¨¨ÁÉ•Í•¹Ñ•…ÌÍÕÉÙ•äµ…‘©ÕÍÑ•…ÕÍ…°•™™•ÑÌ½È™½Éµ…°Á½ÁÕ±…Ñ¥½¸¥¹™•É•¹”¸ÍÍ½¥…Ñ¥½¹Ìµ…äÉ•™±•Ğ½¹™½Õ¹‘¥¹œ°µ•…ÍÕÉ•µ•¹Ğ‘¥™™•É•¹•Ì°…¹ÍÕÉÙ•äµÉ•ÍÁ½¹Í”ÁÉ½•ÍÍ•Ì¸((ŒŒ…Ñ„Í½ÕÉ”…¹…ÑÑÉ¥‰ÕÑ¥½¸((¨©…Ñ„M½ÕÉ”è¨¨9…Ñ¥½¹…°•¹Ñ•È™½È!•…±Ñ MÑ…Ñ¥ÍÑ¥Ì°9…Ñ¥½¹…°!•…±Ñ %¹Ñ•ÉÙ¥•ÜMÕÉÙ•ä°€ÈÀÈÔ¸()=™™¥¥…°€ÈÀÈÔ‘½Õµ•¹Ñ…Ñ¥½¸…¹ÁÕ‰±¥ŒµÕÍ”‘½İ¹±½…‘Ì…É”…Ù…¥±…‰±”™É½´Ñ¡”m½9!L€ÈÀÈÔ9!%LÉ•±•…Í•t¡¡ÑÑÁÌè¼½İİÜ¹‘Œ¹½Ø½¹¡Ì½¹¡¥Ì½‘½Õµ•¹Ñ…Ñ¥½¸¼ÈÀÈÔµ¹¡¥Ì¹¡Ñµ°¤¸()Q¡”…¹…±åÍ¥Ì°¥¹Ñ•ÉÁÉ•Ñ…Ñ¥½¹Ì°…¹½¹±ÕÍ¥½¹Ì¥¸Ñ¡¥ÌÉ•Á½Í¥Ñ½Éä…É”Ñ¡½Í”½˜Ñ¡”…ÕÑ¡½È…¹…É”¹½Ğ…ÑÑÉ¥‰ÕÑ…‰±”Ñ¼Ñ¡”9…Ñ¥½¹…°•¹Ñ•È™½È!•…±Ñ MÑ…Ñ¥ÍÑ¥Ì°İ¡¥ ¥ÌÉ•ÍÁ½¹Í¥‰±”½¹±ä™½ÈÑ¡”¥¹¥Ñ¥…°‘…Ñ„¸()Q¡”É…Ü½9!L™¥±•Ì…É”¥¹Ñ•¹Ñ¥½¹…±±ä•á±Õ‘•™É½´¥Ğ¡¥ÍÑ½Éä¸M•”mQ}UM¹µ‘€¡Q}UM¹µ¤…¹m‘…Ñ„½É…Ü½I5¹µ‘€¡‘…Ñ„½É…Ü½I5¹µ¤™½ÈÍ½ÕÉ”°¡•­ÍÕ´°…¹‘…Ñ„µÕÍ”‘•Ñ…¥±Ì¸((ŒŒ1¥•¹Í”()=É¥¥¹…°½‘”…¹É•Á½Í¥Ñ½Éä‘½Õµ•¹Ñ…Ñ¥½¸…É”…Ù…¥±…‰±”Õ¹‘•ÈÑ¡”m5%P1¥•¹Í•t¡1%9M¤®*£ŠsŠSŠt)Q¡”5%P1¥•¹Í”‘½•Ì€¨©¹½Ğ¨¨É•±¥•¹Í”Ñ¡”9…Ñ¥½¹…°!•…±Ñ %¹Ñ•ÉÙ¥•ÜMÕÉÙ•äÍ½ÕÉ”‘…Ñ„ìÕÍ”½˜9!%L‘…Ñ„É•µ…¥¹ÌÍÕ‰©•ĞÑ¼Ñ¡”9!L‘…Ñ„µÕÍ”Ñ•ÉµÌ‘•ÍÉ¥‰•¥¸mQ}UM¹µ‘t¡Q}UM¹µ¤¸(
+â”œâ”€â”€ requirements.txt
+â””â”€â”€ README.md
+```
+
+Respondent-level processed intermediates are reproducible but intentionally excluded from Git history. The repository retains only aggregate/model-summary analytical outputs needed to review the results.
+
+## Reproduce the project
+
+The repository targets **Python 3.15** and pins the tested dependency set in `requirements.txt`.
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+python -m pip install --upgrade pip
+python -m pip install -r requirements.txt
+```
+
+Download the two official 2025 NHIS public-use files and verify them against the NCHS-published MD5 checksums:
+
+```bash
+python scripts/download_data.py
+```
+
+Run the complete analytical pipeline:
+
+```bash
+python scripts/run_pipeline.py
+```
+
+Run the validation suite:
+
+```bash
+python -m pytest -q -p no:cacheprovider
+```
+
+Open the notebooks locally with:
+
+```bash
+jupyter lab
+```
+
+GitHub Actions repeats source download/checksum verification, the analytical rebuild, and the full validation suite on every push or pull request.
+
+## Methodological guardrails
+
+### Complex survey inference
+
+Population estimates use:
+
+- `WTFA_A` â€” final annual Sample Adult weight
+- `PSTRAT` â€” annual public variance stratum
+- `PPSU` â€” annual public variance PSU
+
+Subgroup estimates are treated as survey domains rather than independent simple random samples. Confidence intervals use Taylor-linearized variances and public-design degrees of freedom.
+
+### Multiple imputation
+
+The ordinary Sample Adult file contains poverty measures based on the **first** imputation. This project instead uses the separate Sample Adult Income file and retains all **10** imputations.
+
+Income-dependent survey estimates are computed in each completed dataset and pooled using within- and between-imputation variance with the Barnardâ€“Rubin degrees-of-freedom adjustment. For predictive modeling, income-enhanced models are refit separately across all 10 imputations and performance variation is reported as a sensitivity analysis. The 10 imputed records are never treated as 10 independent respondents.
+
+### Predictive modeling is not causal inference
+
+The predictive models are evaluated as risk-ranking tools. Survey weights are used as model/evaluation sample weights, but logistic coefficients and boosting feature importance are **not** presented as survey-adjusted causal effects or formal population inference. Associations may reflect confounding, measurement differences, and survey-response processes.
+
+## Data source and attribution
+
+**Data Source:** National Center for Health Statistics, National Health Interview Survey, 2025.
+
+Official 2025 documentation and public-use downloads are available from the [CDC/NCHS 2025 NHIS release](https://www.cdc.gov/nchs/nhis/documentation/2025-nhis.html).
+
+The analysis, interpretations, and conclusions in this repository are those of the author and are not attributable to the National Center for Health Statistics, which is responsible only for the initial data.
+
+The raw CDC/NCHS files are intentionally excluded from Git history. See [`DATA_USE.md`](DATA_USE.md) and [`data/raw/README.md`](data/raw/README.md) for source, checksum, and data-use details.
+
+## License
+
+Original code and repository documentation are available under the [MIT License](LICENSE). The MIT License does **not** relicense the National Health Interview Survey source data; use of NHIS data remains subject to the NCHS data-use terms described in [`DATA_USE.md`](DATA_USE.md).
