@@ -299,7 +299,7 @@ def prepare_data():
     modeling_base.to_csv(PROCESSED_DIR / "modeling_base.csv", index=False)
     income_imputations.to_csv(PROCESSED_DIR / "income_imputations.csv", index=False)
     variable_dictionary.to_csv(PROCESSED_DIR / "variable_dictionary.csv", index=False)
-    (PROCESSED_DIR / "data_summary.json").write_text(json.dumps(summary, indent=2) + "\\n")
+    (PROCESSED_DIR / "data_summary.json").write_text(json.dumps(summary, indent=2) + "\n")
 
     return summary
 
