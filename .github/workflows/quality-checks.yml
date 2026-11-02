@@ -22,7 +22,7 @@ jobs:
           python-version: "3.14"
           cache: pip
 
-      - name: Install dependencies
+      - name: Install Python dependencies
         run: |
           python -m pip install --upgrade pip
           python -m pip install -r requirements.txt
@@ -33,5 +33,28 @@ jobs:
       - name: Rebuild analytical outputs
         run: python scripts/run_pipeline.py
 
+      - name: Verify tracked analytical outputs are reproducible
+        run: python scripts/check_reproducibility.py
+
       - name: Run validation tests
         run: python -m pytest -q -p no:cacheprovider
+
+      - name: Execute review notebooks from the rebuilt data
+        run: |
+          mkdir -p /tmp/nhis-notebook-check
+          for notebook in notebooks/*.ipynb; do
+            jupyter nbconvert \
+              --to notebook \
+              --execute "$notebook" \
+              --output-dir /tmp/nhis-notebook-check \
+              --ExecutePreprocessor.timeout=240
+          done
+
+      - name: Set up R
+        uses: r-lib/actions/setup-r@v2
+
+      - name: Install R survey package
+        run: Rscript -e 'install.packages("survey", repos="https://cloud.r-project.org")'
+
+      - name: Cross-check survey estimates with R survey
+        run: Rscript validation/reference_survey_check.R

@@ -15,3 +15,6 @@ data/processed/modeling_base.csv
 data/processed/income_imputations.csv
 data/processed/model_split.csv
 data/processed/test_predictions.csv
+
+# Review notebooks export local PNG figures; README uses tracked SVG summaries.
+assets/*.png

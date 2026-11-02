@@ -33,6 +33,11 @@ RANDOM_STATE = 2026
 TEST_SIZE = 0.25
 
 BASE_NUMERIC = ["age", "family_adults", "family_children"]
+SUBGROUP_SPECS = {
+    "Sex": "sex",
+    "Race/ethnicity": "race_ethnicity",
+    "Nativity": "nativity",
+}
 
 
 def _load_data():
@@ -207,6 +212,59 @@ def _risk_decile_table(y_true, probabilities, weights):
         )
     return pd.DataFrame(rows)
 
+
+
+def _subgroup_diagnostics(test, probability_map):
+    rows = []
+    for dimension, column in SUBGROUP_SPECS.items():
+        levels = sorted(test[column].dropna().astype(str).unique())
+        for level in levels:
+            mask = test[column].astype("string").eq(level).fillna(False).to_numpy()
+            subgroup = test.loc[mask]
+            y = subgroup["delayed_care_cost"].astype(int).to_numpy()
+            weights = subgroup["WTFA_A"].astype(float).to_numpy()
+            positives = int(y.sum())
+            weighted_prevalence = float(np.average(y, weights=weights))
+
+            for model_name, probabilities in probability_map.items():
+                subgroup_probabilities = np.asarray(probabilities, dtype=float)[mask]
+                mean_probability = float(
+                    np.average(subgroup_probabilities, weights=weights)
+                )
+                if len(np.unique(y)) == 2:
+                    weighted_auc = float(
+                        roc_auc_score(y, subgroup_probabilities, sample_weight=weights)
+                    )
+                    weighted_ap = float(
+                        average_precision_score(
+                            y, subgroup_probabilities, sample_weight=weights
+                        )
+                    )
+                else:
+                    weighted_auc = np.nan
+                    weighted_ap = np.nan
+
+                rows.append(
+                    {
+                        "dimension": dimension,
+                        "level": level,
+                        "model": model_name,
+                        "unweighted_n": int(len(subgroup)),
+                        "unweighted_positives": positives,
+                        "weighted_prevalence": weighted_prevalence,
+                        "weighted_mean_predicted_probability": mean_probability,
+                        "weighted_calibration_gap": mean_probability - weighted_prevalence,
+                        "weighted_roc_auc": weighted_auc,
+                        "weighted_average_precision": weighted_ap,
+                        "weighted_brier_score": float(
+                            brier_score_loss(
+                                y, subgroup_probabilities, sample_weight=weights
+                            )
+                        ),
+                    }
+                )
+    return pd.DataFrame(rows)
+
 def _normalized_weights(weights):
     weights = np.asarray(weights, dtype=float)
     return weights / weights.mean()
@@ -344,6 +402,14 @@ def run_modeling():
     predictions["expanded_probability"] = expanded_prob
     predictions["boosting_probability"] = boosting_prob
 
+    subgroup_diagnostics = _subgroup_diagnostics(
+        test,
+        {
+            "expanded_logistic": expanded_prob,
+            "expanded_gradient_boosting": boosting_prob,
+        },
+    )
+
     permutation = permutation_importance(
         boosting_pipe,
         test[EXPANDED_MODEL_COLUMNS],
@@ -396,6 +462,9 @@ def run_modeling():
     )
     income_runs.to_csv(PROCESSED_DIR / "income_model_runs.csv", index=False)
     income_summary.to_csv(PROCESSED_DIR / "income_model_summary.csv", index=False)
+    subgroup_diagnostics.to_csv(
+        PROCESSED_DIR / "model_subgroup_metrics.csv", index=False
+    )
 
     summary = {
         "random_state": RANDOM_STATE,

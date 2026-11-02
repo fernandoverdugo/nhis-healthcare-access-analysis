@@ -1,0 +1,25 @@
+# Independent survey-method validation
+
+The primary Python implementation computes survey-weighted proportions and Taylor-linearized standard errors directly from the 2025 NHIS public-use design variables. Because hand-written complex-survey variance code is a higher-risk component than ordinary data transformation, this repository independently checks representative estimates against R's established `survey` package.
+
+`reference_survey_check.R` follows the 2025 NCHS guidance by creating the survey design with:
+
+- `WTFA_A` as the final Sample Adult weight
+- `PSTRAT` as the public variance stratum
+- `PPSU` as the public variance PSU
+- `nest = TRUE`
+- full-file survey design objects with survey-domain subpopulation analysis
+
+The validation compares both point estimates and Taylor-linearized standard errors for the overall delayed-care prevalence and representative subgroups. It also verifies the survey design degrees of freedom.
+
+The reference check runs in GitHub Actions after the Python pipeline and test suite. A mismatch causes the workflow to fail.
+
+## Confidence-interval scope
+
+The project's Python survey tables report two-sided t-based intervals using Taylor-linearized standard errors. NCHS's 2025 PRICSSA guidance recommends Korn-Graubard/Clopper-Pearson confidence intervals for publication-grade presentation of proportions. The reference check therefore validates the point estimates and standard errors that underlie the project analysis; it does not claim that the project's interval construction is identical to the NCHS presentation-standard interval.
+
+Official methodology references:
+
+- 2025 NHIS Survey Description: https://ftp.cdc.gov/pub/Health_Statistics/NCHS/Dataset_Documentation/NHIS/2025/srvydesc-508.pdf
+- 2025 NHIS PRICSSA checklist: https://ftp.cdc.gov/pub/Health_Statistics/NCHS/Dataset_Documentation/NHIS/2025/2025-NHIS-PRICSSA-508.pdf
+- NCHS Data Presentation Standards for Proportions: https://www.cdc.gov/nchs/data/series/sr_02/sr02_175.pdf

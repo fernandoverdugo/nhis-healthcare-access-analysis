@@ -5,7 +5,7 @@ A reproducible Python project combining **complex-survey inference, multiple imp
 The project deliberately separates two questions:
 
 1. **Population inference:** Which groups experience the highest prevalence of delaying medical care because of cost?
-2. **Predictive modeling:** How well can a curated set of demographic, socioeconomic, access, and health characteristics identify adults at elevated risk?
+2. **Predictive modeling:** How well can a curated set of demographic, socioeconomic, access, and health characteristics distinguish adults who report cost-related delayed care during the prior 12 months?
 
 NHIS is a complex probability survey, so survey-weighted population estimates and predictive model performance are treated as related but distinct analytical products.
 
@@ -17,14 +17,14 @@ NHIS is a complex probability survey, so survey-weighted population estimates an
 
 - 2025 NHIS Sample Adult analysis with **24,215 respondents**
 - survey-weighted prevalence estimates using the final annual weight, public stratum, and PSU variables
-- Taylor-linearized confidence intervals for overall and subgroup estimates
+- Taylor-linearized standard errors and transparent t-based confidence intervals for overall and subgroup estimates
 - all **10 official income imputations** retained and pooled rather than reduced to a single imputation
 - curated feature design instead of indiscriminately modeling all 577 public-use adult variables
 - held-out logistic-regression baselines and one nonlinear gradient-boosting benchmark
 - weighted ROC-AUC, average precision, Brier score, log loss, calibration, and risk-concentration diagnostics
-- held-out permutation importance for model interpretability
+- held-out permutation importance plus subgroup discrimination/calibration diagnostics for model interpretability and responsible review
 - **3 fully executed review notebooks** with rendered tables and linked SVG figures
-- automated source validation and analytical tests
+- automated source validation, analytical tests, notebook execution, and independent R `survey` cross-checks of representative survey estimates
 - reproducible CDC/NCHS data download with checksum verification
 
 ## Primary outcome
@@ -60,6 +60,8 @@ Each completed income dataset is analyzed separately. Point estimates and Taylor
 
 ### Predictive modeling
 
+NHIS is cross-sectional, so these models are **retrospective classification/risk-ranking models**, not prospective forecasts of future delayed care. They use characteristics measured in the same interview to distinguish adults who report delayed care because of cost during the prior 12 months.
+
 On the fixed held-out test set:
 
 | Model | Weighted ROC-AUC | Weighted average precision | Weighted Brier score |
@@ -77,13 +79,17 @@ The nonlinear model is useful as a risk-ranking benchmark: the **highest-risk 10
 
 Because the positive outcome is uncommon, a default probability cutoff of 0.50 yields low recall. The project therefore emphasizes discrimination, precision-recall performance, calibration-oriented loss metrics, and risk ranking rather than raw accuracy or an arbitrary operating threshold.
 
+### Subgroup model diagnostics
+
+The repository also reports held-out discrimination and calibration diagnostics for **sex, race/ethnicity, and nativity** for the expanded logistic and gradient-boosting models. These diagnostics include subgroup sample sizes and positive counts so that very small groups are visible rather than silently summarized. They are intended as a responsible-model review aid, not as a claim that a model is fair or unfair for any group. See [`data/processed/model_subgroup_metrics.csv`](data/processed/model_subgroup_metrics.csv).
+
 ## Analytical design
 
 **Core model:** age, sex, race/ethnicity, education, marital status, family composition, housing tenure, employment, nativity, insurance status, usual place of care, region, and urban-rural classification.
 
 **Expanded model:** the core model plus general health status and functioning difficulty.
 
-**Nonlinear benchmark:** histogram gradient boosting using the expanded feature set and the identical held-out test set.
+**Nonlinear benchmark:** histogram gradient boosting using the expanded feature set and the identical held-out test set. All model comparisons are retrospective classification benchmarks on the cross-sectional 2025 NHIS sample.
 
 **Income extensions:** the core and expanded logistic models plus top-coded family poverty ratio, refit independently for each of the 10 official income imputations.
 
@@ -116,6 +122,7 @@ Reviews the nonlinear benchmark through permutation importance, weighted calibra
 │   │   ├── survey_group_estimates.csv
 │   │   ├── income_pooled_estimates.csv
 │   │   ├── model_metrics.csv
+│   │   ├── model_subgroup_metrics.csv
 │   │   ├── boosting_permutation_importance.csv
 │   │   ├── boosting_calibration.csv
 │   │   ├── boosting_risk_deciles.csv
@@ -130,8 +137,12 @@ Reviews the nonlinear benchmark through permutation importance, weighted calibra
 │   ├── prepare_data.py
 │   ├── survey_analysis.py
 │   ├── train_models.py
+│   ├── check_reproducibility.py
 │   └── run_pipeline.py
 ├── tests/
+├── validation/
+│   ├── README.md
+│   └── reference_survey_check.R
 ├── DATA_USE.md
 ├── LICENSE
 ├── requirements.txt
@@ -175,7 +186,7 @@ Open the notebooks locally with:
 jupyter lab
 ```
 
-GitHub Actions repeats source download/checksum verification, the analytical rebuild, and the full validation suite on every push or pull request.
+GitHub Actions repeats source download/checksum verification, the analytical rebuild, a tolerance-aware reproducibility check for tracked analytical outputs, the full Python validation suite, execution of all three review notebooks, and an independent cross-check of representative survey estimates with R's `survey` package on every push or pull request.
 
 ## Methodological guardrails
 
@@ -187,7 +198,7 @@ Population estimates use:
 - `PSTRAT` — annual public variance stratum
 - `PPSU` — annual public variance PSU
 
-Subgroup estimates are treated as survey domains rather than independent simple random samples. Confidence intervals use Taylor-linearized variances and public-design degrees of freedom.
+Subgroup estimates are treated as survey domains rather than independent simple random samples. The project computes Taylor-linearized standard errors and two-sided t-based intervals using the public-design degrees of freedom. Representative point estimates and standard errors are independently cross-checked against R's `survey` package in CI. NCHS's 2025 PRICSSA guidance recommends Korn-Graubard/Clopper-Pearson confidence intervals for publication-grade presentation of proportions; this repository documents that distinction rather than claiming its interval construction is identical to the NCHS presentation standard. See [`validation/README.md`](validation/README.md).
 
 ### Multiple imputation
 
@@ -195,9 +206,9 @@ The ordinary Sample Adult file contains poverty measures based on the **first** 
 
 Income-dependent survey estimates are computed in each completed dataset and pooled using within- and between-imputation variance with the Barnard–Rubin degrees-of-freedom adjustment. For predictive modeling, income-enhanced models are refit separately across all 10 imputations and performance variation is reported as a sensitivity analysis. The 10 imputed records are never treated as 10 independent respondents.
 
-### Predictive modeling is not causal inference
+### Predictive modeling is neither prospective nor causal inference
 
-The predictive models are evaluated as risk-ranking tools. Survey weights are used as model/evaluation sample weights, but logistic coefficients and boosting feature importance are **not** presented as survey-adjusted causal effects or formal population inference. Associations may reflect confounding, measurement differences, and survey-response processes.
+NHIS is a cross-sectional household interview survey. The predictive models are therefore evaluated as retrospective classification and score-ranking tools, not as forecasts of future delayed care. Survey weights are used as model/evaluation sample weights, but logistic coefficients, subgroup performance, and boosting feature importance are **not** presented as survey-adjusted causal effects or formal population inference. Associations may reflect confounding, temporal ambiguity, measurement differences, and survey-response processes.
 
 ## Data source and attribution
 

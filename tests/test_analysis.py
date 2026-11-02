@@ -108,3 +108,26 @@ def test_income_pooling_reports_barnard_rubin_diagnostics():
     assert pooled["fraction_missing_information"].between(0, 1).all()
     assert pooled["mi_df"].gt(0).all()
     assert pooled["mi_df"].lt(562).all()
+
+
+def test_subgroup_diagnostics_cover_selected_sensitive_dimensions():
+    subgroup = pd.read_csv(PROCESSED / "model_subgroup_metrics.csv")
+    assert set(subgroup["dimension"]) == {"Sex", "Race/ethnicity", "Nativity"}
+    assert set(subgroup["model"]) == {
+        "expanded_logistic",
+        "expanded_gradient_boosting",
+    }
+    assert "Citizenship" not in set(subgroup["dimension"])
+
+
+def test_subgroup_diagnostic_metrics_are_bounded_and_report_counts():
+    subgroup = pd.read_csv(PROCESSED / "model_subgroup_metrics.csv")
+    assert subgroup["unweighted_n"].gt(0).all()
+    assert subgroup["unweighted_positives"].ge(0).all()
+    assert subgroup["weighted_prevalence"].between(0, 1).all()
+    assert subgroup["weighted_mean_predicted_probability"].between(0, 1).all()
+    assert subgroup["weighted_brier_score"].between(0, 1).all()
+    nonmissing_auc = subgroup["weighted_roc_auc"].dropna()
+    nonmissing_ap = subgroup["weighted_average_precision"].dropna()
+    assert nonmissing_auc.between(0, 1).all()
+    assert nonmissing_ap.between(0, 1).all()

@@ -95,6 +95,10 @@ Performance from the core-plus-income and expanded-plus-income models fit separa
 
 Mean, standard deviation, minimum, and maximum performance across the 10 income imputations.
 
+### `model_subgroup_metrics.csv`
+
+Held-out subgroup diagnostics for sex, race/ethnicity, and nativity for the expanded logistic and gradient-boosting models. The file reports subgroup sample sizes, weighted prevalence, mean predicted probability, calibration gap, ROC-AUC, average precision, and Brier score. Small subgroups are retained transparently and should be interpreted cautiously rather than treated as fairness conclusions.
+
 ### `model_summary.json`
 
 Compact modeling metadata and headline discrimination metrics.
