@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="235" viewBox="0 0 900 235" role="img" aria-labelledby="title desc">
+<title id="title">Positive-outcome concentration by model risk</title>
+<desc id="desc">Share of weighted delayed-care cases captured</desc>
+<style>text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#17202a}.title{font-size:24px;font-weight:700}.sub{font-size:14px;fill:#5d6d7e}.lab{font-size:14px}.val{font-size:13px;font-weight:600}.bar{fill:#566573}.grid{stroke:#d5d8dc;stroke-width:1}</style>
+<text x="30" y="38" class="title">Positive-outcome concentration by model risk</text>
+<text x="30" y="63" class="sub">Share of weighted delayed-care cases captured</text>
+<text x="248" y="114" text-anchor="end" class="lab">Highest-risk 10%</text>
+<rect x="260" y="96" width="321.0" height="24" rx="3" class="bar"/>
+<text x="589.0" y="113" class="val">42.4%</text>
+<text x="248" y="156" text-anchor="end" class="lab">Highest-risk 20%</text>
+<rect x="260" y="138" width="461.9" height="24" rx="3" class="bar"/>
+<text x="729.9" y="155" class="val">61.0%</text>
+</svg>

@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="319" viewBox="0 0 900 319" role="img" aria-labelledby="title desc">
+<title id="title">Held-out model discrimination</title>
+<desc id="desc">Weighted ROC-AUC shown as percent-equivalent for readability</desc>
+<style>text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#17202a}.title{font-size:24px;font-weight:700}.sub{font-size:14px;fill:#5d6d7e}.lab{font-size:14px}.val{font-size:13px;font-weight:600}.bar{fill:#566573}.grid{stroke:#d5d8dc;stroke-width:1}</style>
+<text x="30" y="38" class="title">Held-out model discrimination</text>
+<text x="30" y="63" class="sub">Weighted ROC-AUC shown as percent-equivalent for readability</text>
+<text x="248" y="114" text-anchor="end" class="lab">Prevalence baseline</text>
+<rect x="260" y="96" width="265.0" height="24" rx="3" class="bar"/>
+<text x="533.0" y="113" class="val">50.0%</text>
+<text x="248" y="156" text-anchor="end" class="lab">Core logistic</text>
+<rect x="260" y="138" width="391.1" height="24" rx="3" class="bar"/>
+<text x="659.1" y="155" class="val">73.8%</text>
+<text x="248" y="198" text-anchor="end" class="lab">Expanded logistic</text>
+<rect x="260" y="180" width="409.7" height="24" rx="3" class="bar"/>
+<text x="677.7" y="197" class="val">77.3%</text>
+<text x="248" y="240" text-anchor="end" class="lab">Gradient boosting</text>
+<rect x="260" y="222" width="413.9" height="24" rx="3" class="bar"/>
+<text x="681.9" y="239" class="val">78.1%</text>
+</svg>

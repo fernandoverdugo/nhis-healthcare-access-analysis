@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="361" viewBox="0 0 900 361" role="img" aria-labelledby="title desc">
+<title id="title">Gradient boosting permutation importance</title>
+<desc id="desc">Decrease in weighted ROC-AUC when a held-out feature is permuted</desc>
+<style>text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#17202a}.title{font-size:24px;font-weight:700}.sub{font-size:14px;fill:#5d6d7e}.lab{font-size:14px}.val{font-size:13px;font-weight:600}.bar{fill:#566573}.grid{stroke:#d5d8dc;stroke-width:1}</style>
+<text x="30" y="38" class="title">Gradient boosting permutation importance</text>
+<text x="30" y="63" class="sub">Decrease in weighted ROC-AUC when a held-out feature is permuted</text>
+<text x="248" y="114" text-anchor="end" class="lab">Insurance status</text>
+<rect x="260" y="96" width="467.0" height="24" rx="3" class="bar"/>
+<text x="735.0" y="113" class="val">0.1</text>
+<text x="248" y="156" text-anchor="end" class="lab">Age</text>
+<rect x="260" y="138" width="409.5" height="24" rx="3" class="bar"/>
+<text x="677.5" y="155" class="val">0.1</text>
+<text x="248" y="198" text-anchor="end" class="lab">Functioning difficulty</text>
+<rect x="260" y="180" width="166.3" height="24" rx="3" class="bar"/>
+<text x="434.3" y="197" class="val">0.0</text>
+<text x="248" y="240" text-anchor="end" class="lab">General health</text>
+<rect x="260" y="222" width="143.9" height="24" rx="3" class="bar"/>
+<text x="411.9" y="239" class="val">0.0</text>
+<text x="248" y="282" text-anchor="end" class="lab">Housing tenure</text>
+<rect x="260" y="264" width="36.3" height="24" rx="3" class="bar"/>
+<text x="304.3" y="281" class="val">0.0</text>
+</svg>

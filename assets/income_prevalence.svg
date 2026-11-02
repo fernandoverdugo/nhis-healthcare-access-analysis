@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="319" viewBox="0 0 900 319" role="img" aria-labelledby="title desc">
+<title id="title">Delayed care by family poverty level</title>
+<desc id="desc">Pooled across all 10 official income imputations</desc>
+<style>text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#17202a}.title{font-size:24px;font-weight:700}.sub{font-size:14px;fill:#5d6d7e}.lab{font-size:14px}.val{font-size:13px;font-weight:600}.bar{fill:#566573}.grid{stroke:#d5d8dc;stroke-width:1}</style>
+<text x="30" y="38" class="title">Delayed care by family poverty level</text>
+<text x="30" y="63" class="sub">Pooled across all 10 official income imputations</text>
+<text x="248" y="114" text-anchor="end" class="lab">Below 100% FPL</text>
+<rect x="260" y="96" width="424.0" height="24" rx="3" class="bar"/>
+<text x="692.0" y="113" class="val">10.4%</text>
+<text x="248" y="156" text-anchor="end" class="lab">100–199% FPL</text>
+<rect x="260" y="138" width="452.5" height="24" rx="3" class="bar"/>
+<text x="720.5" y="155" class="val">11.1%</text>
+<text x="248" y="198" text-anchor="end" class="lab">200–399% FPL</text>
+<rect x="260" y="180" width="350.6" height="24" rx="3" class="bar"/>
+<text x="618.6" y="197" class="val">8.6%</text>
+<text x="248" y="240" text-anchor="end" class="lab">400%+ FPL</text>
+<rect x="260" y="222" width="146.8" height="24" rx="3" class="bar"/>
+<text x="414.8" y="239" class="val">3.6%</text>
+</svg>

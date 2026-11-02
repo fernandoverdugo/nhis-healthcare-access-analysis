@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="445" viewBox="0 0 900 445" role="img" aria-labelledby="title desc">
+<title id="title">Delayed care due to cost — selected groups</title>
+<desc id="desc">Survey-weighted prevalence, 2025 NHIS</desc>
+<style>text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#17202a}.title{font-size:24px;font-weight:700}.sub{font-size:14px;fill:#5d6d7e}.lab{font-size:14px}.val{font-size:13px;font-weight:600}.bar{fill:#566573}.grid{stroke:#d5d8dc;stroke-width:1}</style>
+<text x="30" y="38" class="title">Delayed care due to cost — selected groups</text>
+<text x="30" y="63" class="sub">Survey-weighted prevalence, 2025 NHIS</text>
+<text x="248" y="114" text-anchor="end" class="lab">Not insured</text>
+<rect x="260" y="96" width="473.2" height="24" rx="3" class="bar"/>
+<text x="741.2" y="113" class="val">26.6%</text>
+<text x="248" y="156" text-anchor="end" class="lab">Poor health</text>
+<rect x="260" y="138" width="306.0" height="24" rx="3" class="bar"/>
+<text x="574.0" y="155" class="val">17.2%</text>
+<text x="248" y="198" text-anchor="end" class="lab">No usual care place</text>
+<rect x="260" y="180" width="266.9" height="24" rx="3" class="bar"/>
+<text x="534.9" y="197" class="val">15.0%</text>
+<text x="248" y="240" text-anchor="end" class="lab">Rented housing</text>
+<rect x="260" y="222" width="190.4" height="24" rx="3" class="bar"/>
+<text x="458.4" y="239" class="val">10.7%</text>
+<text x="248" y="282" text-anchor="end" class="lab">Functioning difficulty</text>
+<rect x="260" y="264" width="167.2" height="24" rx="3" class="bar"/>
+<text x="435.2" y="281" class="val">9.4%</text>
+<text x="248" y="324" text-anchor="end" class="lab">Covered</text>
+<rect x="260" y="306" width="90.7" height="24" rx="3" class="bar"/>
+<text x="358.7" y="323" class="val">5.1%</text>
+<text x="248" y="366" text-anchor="end" class="lab">Excellent health</text>
+<rect x="260" y="348" width="72.9" height="24" rx="3" class="bar"/>
+<text x="340.9" y="365" class="val">4.1%</text>
+</svg>
