@@ -418,8 +418,7 @@ def run_modeling():
         "income_imputations": 10,
         "note": "Predictive models use final survey weights as sample weights but do not use PSTRAT/PPSU for coefficient inference; population inference is reported separately in survey_analysis.py.",
     }
-    (PROCESSED_DIR / "model_summary.json").write_text(json.dumps(summary, indent=2) + "
-")
+    (PROCESSED_DIR / "model_summary.json").write_text(json.dumps(summary, indent=2) + "\n")
     return summary
 
 
