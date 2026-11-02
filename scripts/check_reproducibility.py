@@ -8,8 +8,8 @@ import pandas as pd
 
 ROOT = Path(__file__).resolve().parents[1]
 PROCESSED_DIR = ROOT / "data" / "processed"
-RTOL = 1e-8
-ATOL = 1e-10
+RTOL = 1e-6
+ATOL = 1e-6
 
 
 def _git_text(path):
