@@ -1,0 +1,25 @@
+source_variable,friendly_name,description,role,treatment
+MEDDL12M_A,Primary outcome,"Delayed medical care due to cost, past 12 months",target,"Yes=1, No=0; special response codes become missing"
+MEDNG12M_A,Secondary outcome,"Needed medical care but did not get it due to cost, past 12 months",secondary_outcome,Never used as a predictor of MEDDL12M_A
+AGEP_A,Age,"Age of Sample Adult, top-coded",core_predictor,85 represents age 85+; 97-99 become missing
+SEX_A,Sex,Sex of Sample Adult,core_predictor,Categorical
+HISPALLP_A,Race/ethnicity,Single and multiple race groups with Hispanic origin,core_predictor,Public-use combined recode
+EDUCP_A,Education,Educational level of Sample Adult,core_predictor,Categorical
+MARSTAT_A,Marital status,Current marital status of Sample Adult,core_predictor,Code 9 unknown becomes missing
+PCNTADLT_A,Family adults,Number of adults in Sample Adult family,core_predictor,Top-coded at 3+
+PCNTKIDS_A,Family children,Number of children in Sample Adult family,core_predictor,Top-coded at 3+
+HOUTENURE_A,Housing tenure,Residence owned or rented,core_predictor,Categorical
+EMPWRKLSW1_A,Employment,Worked last week,core_predictor,Edited employment recode
+NATUSBORN_A,Nativity,Born in U.S. or U.S. territory,core_predictor,Categorical
+CITZNSTP_A,Citizenship,Citizenship status,descriptive_sensitive,Retained for subgroup analysis; excluded from default core model
+NOTCOV_A,Insurance,"Coverage status as used in Health, United States",core_predictor,Not covered vs covered
+USUALPL_A,Usual care,Have a usual place for care,core_predictor,Categorical
+REGION,Region,Household region,core_predictor,Northeast/Midwest/South/West
+URBRRL23,Urban-rural,2023 NCHS Urban-Rural Classification Scheme for Counties,core_predictor,Four public-use categories
+PHSTAT_A,General health,General health status,expanded_predictor,Added only in expanded model
+ANYDIFF_A,Functioning,Functioning difficulties status,expanded_predictor,Added only in expanded model
+POVRATTC_A,Poverty ratio,"Sample Adult family poverty ratio, top-coded",income_predictor,Analyze across all 10 income imputations
+RATCAT_A,Poverty category,Ratio of family income to poverty threshold,income_predictor,Analyze across all 10 income imputations
+WTFA_A,Survey weight,Final annual Sample Adult weight,survey_design,Use for population estimates
+PSTRAT,Variance stratum,Annual public variance stratum,survey_design,Use for survey variance estimation
+PPSU,Variance PSU,Annual public variance PSU,survey_design,Use for survey variance estimation

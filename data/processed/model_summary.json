@@ -1,0 +1,20 @@
+{
+  "random_state": 2026,
+  "test_size": 0.25,
+  "training_rows": 18015,
+  "test_rows": 6006,
+  "test_positive_rows": 391,
+  "core_weighted_roc_auc": 0.7381681751558817,
+  "expanded_weighted_roc_auc": 0.772880778602705,
+  "boosting_weighted_roc_auc": 0.7807108743215091,
+  "core_weighted_average_precision": 0.230646370297633,
+  "expanded_weighted_average_precision": 0.271868642105458,
+  "boosting_weighted_average_precision": 0.2667298824384468,
+  "boosting_top_decile_positive_capture": 0.42404474379079404,
+  "income_models": [
+    "core_plus_income_logistic",
+    "expanded_plus_income_logistic"
+  ],
+  "income_imputations": 10,
+  "note": "Predictive models use final survey weights as sample weights but do not use PSTRAT/PPSU for coefficient inference; population inference is reported separately in survey_analysis.py."
+}

@@ -1,0 +1,25 @@
+{
+  "adult_rows": 24215,
+  "unique_adults": 24215,
+  "income_rows": 242150,
+  "income_imputations_per_adult": 10,
+  "target_valid_rows": 24021,
+  "target_positive_rows": 1564,
+  "target_negative_rows": 22457,
+  "target_unweighted_prevalence": 0.06510969568294409,
+  "target_weighted_point_estimate": 0.07046682116437372,
+  "secondary_positive_rows": 1351,
+  "income_imputation_numbers": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+  ],
+  "note": "Weighted prevalence is a point estimate only; survey-design variance estimation is handled in the statistical-analysis stage."
+}

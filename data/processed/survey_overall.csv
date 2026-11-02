@@ -1,0 +1,2 @@
+dimension,level,unweighted_n,unweighted_positives,weighted_prevalence,standard_error,ci_lower,ci_upper,design_df
+Overall,All adults,24021,1564,0.07046682116437372,0.0021862113356960465,0.06617267784815309,0.07476096448059436,562

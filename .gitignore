@@ -1,0 +1,17 @@
+__pycache__/
+.pytest_cache/
+.ipynb_checkpoints/
+.venv/
+.DS_Store
+
+# Official CDC/NCHS public-use microdata are downloaded locally.
+data/raw/*.csv
+data/raw/*.zip
+!data/raw/README.md
+
+# Respondent-level derived intermediates are reproducible but not committed.
+data/processed/adult_analysis.csv
+data/processed/modeling_base.csv
+data/processed/income_imputations.csv
+data/processed/model_split.csv
+data/processed/test_predictions.csv
