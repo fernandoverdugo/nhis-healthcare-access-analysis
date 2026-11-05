@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="940" height="524" viewBox="0 0 940 524">
+<rect width="100%" height="100%" fill="white"/>
+<text x="28" y="30" font-size="20" font-family="Arial" font-weight="700">Held-out subgroup discrimination diagnostics</text>
+<text x="28" y="50" font-size="12" font-family="Arial" fill="#5f6b76">Weighted ROC-AUC; small subgroup counts are shown to discourage over-interpretation</text>
+<circle cx="600" cy="72" r="5" fill="#315b7d"/><text x="612" y="76" font-size="11" font-family="Arial">Expanded logistic</text>
+<circle cx="730" cy="72" r="5" fill="#7b4fa3"/><text x="742" y="76" font-size="11" font-family="Arial">Gradient boosting</text>
+<text x="30" y="104" font-size="11" font-family="Arial">Sex · Female</text>
+<text x="360" y="104" font-size="10" font-family="Arial" fill="#6b7280">n=3213, positives=237</text>
+<line x1="580" y1="100" x2="880" y2="100" stroke="#edf0f2"/>
+<circle cx="761.7" cy="100" r="4.8" fill="#315b7d"><title>Sex · Female · expanded_logistic: 0.783</title></circle>
+<circle cx="766.5" cy="100" r="4.8" fill="#7b4fa3"><title>Sex · Female · expanded_gradient_boosting: 0.792</title></circle>
+<text x="30" y="138" font-size="11" font-family="Arial">Sex · Male</text>
+<text x="360" y="138" font-size="10" font-family="Arial" fill="#6b7280">n=2786, positives=154</text>
+<line x1="580" y1="134" x2="880" y2="134" stroke="#edf0f2"/>
+<circle cx="742.6" cy="134" r="4.8" fill="#315b7d"><title>Sex · Male · expanded_logistic: 0.748</title></circle>
+<circle cx="748.7" cy="134" r="4.8" fill="#7b4fa3"><title>Sex · Male · expanded_gradient_boosting: 0.759</title></circle>
+<text x="30" y="172" font-size="11" font-family="Arial">Race/ethnicity · Hispanic</text>
+<text x="360" y="172" font-size="10" font-family="Arial" fill="#6b7280">n=807, positives=74</text>
+<line x1="580" y1="168" x2="880" y2="168" stroke="#edf0f2"/>
+<circle cx="792.2" cy="168" r="4.8" fill="#315b7d"><title>Race/ethnicity · Hispanic · expanded_logistic: 0.839</title></circle>
+<circle cx="786.4" cy="168" r="4.8" fill="#7b4fa3"><title>Race/ethnicity · Hispanic · expanded_gradient_boosting: 0.828</title></circle>
+<text x="30" y="206" font-size="11" font-family="Arial">Race/ethnicity · Non-Hispanic AIAN</text>
+<text x="360" y="206" font-size="10" font-family="Arial" fill="#6b7280">n=43, positives=3</text>
+<line x1="580" y1="202" x2="880" y2="202" stroke="#edf0f2"/>
+<circle cx="624.1" cy="202" r="4.8" fill="#315b7d"><title>Race/ethnicity · Non-Hispanic AIAN · expanded_logistic: 0.531</title></circle>
+<circle cx="650.6" cy="202" r="4.8" fill="#7b4fa3"><title>Race/ethnicity · Non-Hispanic AIAN · expanded_gradient_boosting: 0.579</title></circle>
+<text x="30" y="240" font-size="11" font-family="Arial">Race/ethnicity · Non-Hispanic AIAN and another group</text>
+<text x="360" y="240" font-size="10" font-family="Arial" fill="#6b7280">n=36, positives=3</text>
+<line x1="580" y1="236" x2="880" y2="236" stroke="#edf0f2"/>
+<circle cx="495.4" cy="236" r="4.8" fill="#315b7d"><title>Race/ethnicity · Non-Hispanic AIAN and another group · expanded_logistic: 0.295</title></circle>
+<circle cx="600.9" cy="236" r="4.8" fill="#7b4fa3"><title>Race/ethnicity · Non-Hispanic AIAN and another group · expanded_gradient_boosting: 0.488</title></circle>
+<text x="30" y="274" font-size="11" font-family="Arial">Race/ethnicity · Non-Hispanic Asian</text>
+<text x="360" y="274" font-size="10" font-family="Arial" fill="#6b7280">n=353, positives=13</text>
+<line x1="580" y1="270" x2="880" y2="270" stroke="#edf0f2"/>
+<circle cx="724.0" cy="270" r="4.8" fill="#315b7d"><title>Race/ethnicity · Non-Hispanic Asian · expanded_logistic: 0.714</title></circle>
+<circle cx="669.9" cy="270" r="4.8" fill="#7b4fa3"><title>Race/ethnicity · Non-Hispanic Asian · expanded_gradient_boosting: 0.615</title></circle>
+<text x="30" y="308" font-size="11" font-family="Arial">Race/ethnicity · Non-Hispanic Black/African American</text>
+<text x="360" y="308" font-size="10" font-family="Arial" fill="#6b7280">n=665, positives=56</text>
+<line x1="580" y1="304" x2="880" y2="304" stroke="#edf0f2"/>
+<circle cx="732.1" cy="304" r="4.8" fill="#315b7d"><title>Race/ethnicity · Non-Hispanic Black/African American · expanded_logistic: 0.729</title></circle>
+<circle cx="734.7" cy="304" r="4.8" fill="#7b4fa3"><title>Race/ethnicity · Non-Hispanic Black/African American · expanded_gradient_boosting: 0.734</title></circle>
+<text x="30" y="342" font-size="11" font-family="Arial">Race/ethnicity · Non-Hispanic White</text>
+<text x="360" y="342" font-size="10" font-family="Arial" fill="#6b7280">n=4027, positives=237</text>
+<line x1="580" y1="338" x2="880" y2="338" stroke="#edf0f2"/>
+<circle cx="749.8" cy="338" r="4.8" fill="#315b7d"><title>Race/ethnicity · Non-Hispanic White · expanded_logistic: 0.761</title></circle>
+<circle cx="759.0" cy="338" r="4.8" fill="#7b4fa3"><title>Race/ethnicity · Non-Hispanic White · expanded_gradient_boosting: 0.778</title></circle>
+<text x="30" y="376" font-size="11" font-family="Arial">Race/ethnicity · Other single and multiple races</text>
+<text x="360" y="376" font-size="10" font-family="Arial" fill="#6b7280">n=75, positives=5</text>
+<line x1="580" y1="372" x2="880" y2="372" stroke="#edf0f2"/>
+<circle cx="839.1" cy="372" r="4.8" fill="#315b7d"><title>Race/ethnicity · Other single and multiple races · expanded_logistic: 0.925</title></circle>
+<circle cx="848.4" cy="372" r="4.8" fill="#7b4fa3"><title>Race/ethnicity · Other single and multiple races · expanded_gradient_boosting: 0.942</title></circle>
+<text x="30" y="410" font-size="11" font-family="Arial">Nativity · Born outside U.S./territory</text>
+<text x="360" y="410" font-size="10" font-family="Arial" fill="#6b7280">n=982, positives=65</text>
+<line x1="580" y1="406" x2="880" y2="406" stroke="#edf0f2"/>
+<circle cx="770.3" cy="406" r="4.8" fill="#315b7d"><title>Nativity · Born outside U.S./territory · expanded_logistic: 0.799</title></circle>
+<circle cx="755.4" cy="406" r="4.8" fill="#7b4fa3"><title>Nativity · Born outside U.S./territory · expanded_gradient_boosting: 0.772</title></circle>
+<text x="30" y="444" font-size="11" font-family="Arial">Nativity · U.S. or U.S. territory born</text>
+<text x="360" y="444" font-size="10" font-family="Arial" fill="#6b7280">n=4894, positives=314</text>
+<line x1="580" y1="440" x2="880" y2="440" stroke="#edf0f2"/>
+<circle cx="756.3" cy="440" r="4.8" fill="#315b7d"><title>Nativity · U.S. or U.S. territory born · expanded_logistic: 0.773</title></circle>
+<circle cx="765.2" cy="440" r="4.8" fill="#7b4fa3"><title>Nativity · U.S. or U.S. territory born · expanded_gradient_boosting: 0.790</title></circle>
+<text x="607.3" y="506" text-anchor="middle" font-size="10" font-family="Arial">0.5</text>
+<line x1="607.3" y1="88" x2="607.3" y2="490" stroke="#d9dee2" stroke-dasharray="2 4"/>
+<text x="661.8" y="506" text-anchor="middle" font-size="10" font-family="Arial">0.6</text>
+<line x1="661.8" y1="88" x2="661.8" y2="490" stroke="#d9dee2" stroke-dasharray="2 4"/>
+<text x="716.4" y="506" text-anchor="middle" font-size="10" font-family="Arial">0.7</text>
+<line x1="716.4" y1="88" x2="716.4" y2="490" stroke="#d9dee2" stroke-dasharray="2 4"/>
+<text x="770.9" y="506" text-anchor="middle" font-size="10" font-family="Arial">0.8</text>
+<line x1="770.9" y1="88" x2="770.9" y2="490" stroke="#d9dee2" stroke-dasharray="2 4"/>
+<text x="825.5" y="506" text-anchor="middle" font-size="10" font-family="Arial">0.9</text>
+<line x1="825.5" y1="88" x2="825.5" y2="490" stroke="#d9dee2" stroke-dasharray="2 4"/>
+<text x="880.0" y="506" text-anchor="middle" font-size="10" font-family="Arial">1.0</text>
+<line x1="880.0" y1="88" x2="880.0" y2="490" stroke="#d9dee2" stroke-dasharray="2 4"/>
+</svg>
