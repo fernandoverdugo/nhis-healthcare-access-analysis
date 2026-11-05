@@ -9,9 +9,17 @@ The project deliberately separates two questions:
 
 NHIS is a complex probability survey, so survey-weighted population estimates and predictive model performance are treated as related but distinct analytical products.
 
+## Why this matters
+
+Delaying medical care because of cost is a direct measure of healthcare-access difficulty. This project uses nationally representative survey methods to show where that burden is concentrated, then separately asks whether observable characteristics can meaningfully distinguish respondents at higher reported risk. The goal is not to automate care decisions, but to combine rigorous population inference with transparent predictive benchmarking.
+
 **Review the analysis:** [Exploratory notebook](notebooks/01_exploratory_analysis.ipynb) · [Survey + modeling notebook](notebooks/02_survey_and_modeling_analysis.ipynb) · [Nonlinear benchmark notebook](notebooks/03_nonlinear_benchmark_and_interpretability.ipynb)
 
 ![Weighted model discrimination metrics](assets/model_discrimination_metrics.svg)
+
+![Survey-weighted subgroup prevalence](assets/subgroup_prevalence.svg)
+
+![Risk concentration in the held-out sample](assets/risk_concentration.svg)
 
 ## Portfolio highlights
 
@@ -73,9 +81,9 @@ On the fixed held-out test set:
 
 The expanded specification adds general health and functioning difficulty to the access/demographic core model. Gradient boosting provides a modest improvement in weighted ROC-AUC and probability-loss metrics, but its weighted average precision is slightly below expanded logistic regression. The more complex model therefore does **not** dominate on every metric.
 
-Adding multiply imputed poverty ratio produces a further modest and highly stable improvement in the logistic specifications: mean weighted ROC-AUC rises to approximately **0.751** for the core-plus-income model and **0.781** for the expanded-plus-income model across the 10 imputations.
+Adding multiply imputed poverty ratio produces a further modest and highly stable improvement in the logistic specifications: mean weighted ROC-AUC rises to approximately **0.751** for the core-plus-income model and **0.781** for the expanded-plus-income model across the 10 imputations. These predictive metrics are summarized across 10 separately fitted completed datasets as an **imputation-sensitivity analysis**; they are not Rubin-pooled inferential quantities.
 
-The nonlinear model is useful as a risk-ranking benchmark: the **highest-risk 10%** of the held-out sample contains about **42.4%** of weighted positive outcomes, and the highest-risk 20% contains about **61.0%**. Held-out permutation importance ranks insurance status and age highest, followed by functioning difficulty and general health. These are predictive importance measures, not causal effects.
+The nonlinear model is useful as a risk-ranking benchmark: the **highest-risk decile of held-out respondents** contains about **42.4%** of weighted positive outcomes, and the top two respondent deciles contain about **61.0%**. The deciles contain approximately equal numbers of held-out respondents; observed outcome prevalence and positive-outcome concentration within them are computed using the NHIS final survey weight. Held-out permutation importance ranks insurance status and age highest, followed by functioning difficulty and general health. These are predictive importance measures, not causal effects.
 
 Because the positive outcome is uncommon, a default probability cutoff of 0.50 yields low recall. The project therefore emphasizes discrimination, precision-recall performance, calibration-oriented loss metrics, and risk ranking rather than raw accuracy or an arbitrary operating threshold.
 
@@ -90,6 +98,8 @@ The repository also reports held-out discrimination and calibration diagnostics 
 **Expanded model:** the core model plus general health status and functioning difficulty.
 
 **Nonlinear benchmark:** histogram gradient boosting using the expanded feature set and the identical held-out test set. All model comparisons are retrospective classification benchmarks on the cross-sectional 2025 NHIS sample.
+
+**Model-development strategy:** the project intentionally uses stable, prespecified benchmark models rather than an extensive hyperparameter search. Preprocessing is fit only on training data, and all principal model comparisons use the same fixed held-out test set. This prioritizes transparent comparison and reduces the risk of tuning to a single test split.
 
 **Income extensions:** the core and expanded logistic models plus top-coded family poverty ratio, refit independently for each of the 10 official income imputations.
 
@@ -107,7 +117,7 @@ Reviews survey-weighted prevalence with Taylor-linearized confidence intervals, 
 
 ### 3. [Nonlinear benchmark and interpretability](notebooks/03_nonlinear_benchmark_and_interpretability.ipynb)
 
-Reviews the nonlinear benchmark through permutation importance, weighted calibration, risk deciles, and cumulative concentration of positive outcomes.
+Reviews the nonlinear benchmark through permutation importance, weighted calibration, respondent-based risk deciles, and cumulative concentration of weighted positive outcomes.
 
 ## Repository structure
 
@@ -204,11 +214,11 @@ Subgroup estimates are treated as survey domains rather than independent simple 
 
 The ordinary Sample Adult file contains poverty measures based on the **first** imputation. This project instead uses the separate Sample Adult Income file and retains all **10** imputations.
 
-Income-dependent survey estimates are computed in each completed dataset and pooled using within- and between-imputation variance with the Barnard–Rubin degrees-of-freedom adjustment. For predictive modeling, income-enhanced models are refit separately across all 10 imputations and performance variation is reported as a sensitivity analysis. The 10 imputed records are never treated as 10 independent respondents.
+Income-dependent survey estimates are computed in each completed dataset and pooled using within- and between-imputation variance with the Barnard–Rubin degrees-of-freedom adjustment. For predictive modeling, income-enhanced models are refit separately across all 10 imputations and performance variation is reported as a sensitivity analysis rather than treated as Rubin-pooled model-performance inference. The 10 imputed records are never treated as 10 independent respondents.
 
 ### Predictive modeling is neither prospective nor causal inference
 
-NHIS is a cross-sectional household interview survey. The predictive models are therefore evaluated as retrospective classification and score-ranking tools, not as forecasts of future delayed care. Survey weights are used as model/evaluation sample weights, but logistic coefficients, subgroup performance, and boosting feature importance are **not** presented as survey-adjusted causal effects or formal population inference. Associations may reflect confounding, temporal ambiguity, measurement differences, and survey-response processes.
+NHIS is a cross-sectional household interview survey. The predictive models are therefore evaluated as retrospective classification and score-ranking tools, not as forecasts of future delayed care. Survey weights are used as model/evaluation sample weights, but logistic coefficients, subgroup performance, and boosting feature importance are **not** presented as survey-adjusted causal effects or formal population inference. Calibration bins and risk deciles are formed by respondent rank, with survey weights used for the within-bin outcome summaries. Associations may reflect confounding, temporal ambiguity, measurement differences, and survey-response processes.
 
 ## Data source and attribution
 
