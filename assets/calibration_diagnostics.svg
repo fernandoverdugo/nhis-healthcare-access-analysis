@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="460" viewBox="0 0 760 460">
+<rect width="100%" height="100%" fill="white"/>
+<text x="28" y="30" font-size="20" font-family="Arial" font-weight="700">Gradient-boosting calibration by held-out risk bin</text>
+<text x="28" y="50" font-size="12" font-family="Arial" fill="#5f6b76">Survey-weighted predicted probability vs. observed delayed-care prevalence</text>
+<line x1="76" y1="384" x2="406" y2="54" stroke="#9aa5ad" stroke-width="1.5" stroke-dasharray="5 5"/>
+<line x1="76" y1="54" x2="76" y2="384" stroke="#333" stroke-width="1"/>
+<line x1="76" y1="384" x2="406" y2="384" stroke="#333" stroke-width="1"/>
+<line x1="76.0" y1="384" x2="76.0" y2="389" stroke="#333"/>
+<text x="76.0" y="406" text-anchor="middle" font-size="11" font-family="Arial">0%</text>
+<line x1="71" y1="384.0" x2="76" y2="384.0" stroke="#333"/>
+<text x="66" y="388.0" text-anchor="end" font-size="11" font-family="Arial">0%</text>
+<line x1="186.0" y1="384" x2="186.0" y2="389" stroke="#333"/>
+<text x="186.0" y="406" text-anchor="middle" font-size="11" font-family="Arial">10%</text>
+<line x1="71" y1="274.0" x2="76" y2="274.0" stroke="#333"/>
+<text x="66" y="278.0" text-anchor="end" font-size="11" font-family="Arial">10%</text>
+<line x1="296.0" y1="384" x2="296.0" y2="389" stroke="#333"/>
+<text x="296.0" y="406" text-anchor="middle" font-size="11" font-family="Arial">20%</text>
+<line x1="71" y1="164.0" x2="76" y2="164.0" stroke="#333"/>
+<text x="66" y="168.0" text-anchor="end" font-size="11" font-family="Arial">20%</text>
+<line x1="406.0" y1="384" x2="406.0" y2="389" stroke="#333"/>
+<text x="406.0" y="406" text-anchor="middle" font-size="11" font-family="Arial">30%</text>
+<line x1="71" y1="54.0" x2="76" y2="54.0" stroke="#333"/>
+<text x="66" y="58.0" text-anchor="end" font-size="11" font-family="Arial">30%</text>
+<circle cx="86.0" cy="374.4" r="5.5" fill="#315b7d"><title>Bin 1: predicted 0.9%, observed 0.9%</title></circle>
+<circle cx="92.4" cy="354.9" r="5.5" fill="#315b7d"><title>Bin 2: predicted 1.5%, observed 2.6%</title></circle>
+<circle cx="98.3" cy="367.7" r="5.5" fill="#315b7d"><title>Bin 3: predicted 2.0%, observed 1.5%</title></circle>
+<circle cx="103.8" cy="368.5" r="5.5" fill="#315b7d"><title>Bin 4: predicted 2.5%, observed 1.4%</title></circle>
+<circle cx="110.8" cy="332.3" r="5.5" fill="#315b7d"><title>Bin 5: predicted 3.2%, observed 4.7%</title></circle>
+<circle cx="120.0" cy="339.8" r="5.5" fill="#315b7d"><title>Bin 6: predicted 4.0%, observed 4.0%</title></circle>
+<circle cx="132.4" cy="326.3" r="5.5" fill="#315b7d"><title>Bin 7: predicted 5.1%, observed 5.2%</title></circle>
+<circle cx="155.9" cy="299.1" r="5.5" fill="#315b7d"><title>Bin 8: predicted 7.3%, observed 7.7%</title></circle>
+<circle cx="208.8" cy="244.5" r="5.5" fill="#315b7d"><title>Bin 9: predicted 12.1%, observed 12.7%</title></circle>
+<circle cx="376.8" cy="92.3" r="5.5" fill="#315b7d"><title>Bin 10: predicted 27.3%, observed 26.5%</title></circle>
+<text x="241" y="432" text-anchor="middle" font-size="12" font-family="Arial">Weighted mean predicted probability</text>
+<text x="20" y="219" transform="rotate(-90 20 219)" text-anchor="middle" font-size="12" font-family="Arial">Weighted observed prevalence</text>
+<text x="460" y="105" font-size="13" font-family="Arial" font-weight="700">Interpretation</text>
+<text x="460" y="128" font-size="12" font-family="Arial">Points near the dashed line indicate</text>
+<text x="460" y="146" font-size="12" font-family="Arial">agreement between predicted risk and</text>
+<text x="460" y="164" font-size="12" font-family="Arial">observed weighted prevalence.</text>
+<text x="460" y="205" font-size="12" font-family="Arial">Bins contain approximately equal</text>
+<text x="460" y="223" font-size="12" font-family="Arial">numbers of held-out respondents.</text>
+</svg>
