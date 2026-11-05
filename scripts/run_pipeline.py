@@ -1,12 +1,14 @@
 from prepare_data import prepare_data
 from survey_analysis import run_survey_analysis
 from train_models import run_modeling
+from build_review_artifacts import build_review_artifacts
 
 
 def main():
     prep = prepare_data()
     survey = run_survey_analysis()
     models = run_modeling()
+    build_review_artifacts()
 
     print("Prepared NHIS analytical datasets.")
     print(f"Adults: {prep['adult_rows']:,}")
