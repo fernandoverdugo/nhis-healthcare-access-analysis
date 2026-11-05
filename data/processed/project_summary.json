@@ -1,0 +1,39 @@
+{
+  "sample": {
+    "adult_rows": 24215,
+    "valid_primary_outcomes": 24021,
+    "positive_primary_outcomes": 1564,
+    "income_imputations": 10
+  },
+  "population_inference": {
+    "overall_prevalence": 0.07046682116437372,
+    "overall_ci_lower": 0.06617267784815309,
+    "overall_ci_upper": 0.07476096448059436,
+    "design_df": 562,
+    "not_covered_prevalence": 0.2659437030200255,
+    "covered_prevalence": 0.051150233914288856,
+    "no_usual_place_prevalence": 0.15017917899325672,
+    "poor_health_prevalence": 0.1723217324723106
+  },
+  "income_inference": {
+    "Below 100% FPL": 0.10382471929568556,
+    "100-199% FPL": 0.1106777286527622,
+    "200-399% FPL": 0.08604792134274074,
+    "400%+ FPL": 0.03576234018471234
+  },
+  "predictive_modeling": {
+    "training_rows": 18015,
+    "test_rows": 6006,
+    "test_positive_rows": 391,
+    "expanded_logistic_weighted_roc_auc": 0.772880778602705,
+    "expanded_logistic_weighted_average_precision": 0.271868642105458,
+    "boosting_weighted_roc_auc": 0.7807108743215091,
+    "boosting_weighted_average_precision": 0.2667298824384468,
+    "boosting_weighted_brier_score": 0.05989400675933962,
+    "boosting_top_decile_positive_capture": 0.42404474379079404
+  },
+  "interpretation": {
+    "design": "Cross-sectional NHIS analysis; population estimates are survey-weighted and predictive models are retrospective, not prospective or causal.",
+    "validation": "Representative survey point estimates and standard errors are independently cross-checked against R survey in CI."
+  }
+}
