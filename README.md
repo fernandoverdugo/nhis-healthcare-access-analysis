@@ -21,6 +21,10 @@ Delaying medical care because of cost is a direct measure of healthcare-access d
 
 ![Risk concentration in the held-out sample](assets/risk_concentration.svg)
 
+![Gradient-boosting calibration diagnostics](assets/calibration_diagnostics.svg)
+
+![Held-out subgroup discrimination diagnostics](assets/subgroup_model_diagnostics.svg)
+
 ## Portfolio highlights
 
 - 2025 NHIS Sample Adult analysis with **24,215 respondents**
@@ -33,6 +37,8 @@ Delaying medical care because of cost is a direct measure of healthcare-access d
 - held-out permutation importance plus subgroup discrimination/calibration diagnostics for model interpretability and responsible review
 - **3 fully executed review notebooks** with rendered tables and linked SVG figures
 - automated source validation, analytical tests, notebook execution, and independent R `survey` cross-checks of representative survey estimates
+- committed [R-vs-Python survey cross-check table](validation/survey_crosscheck.csv) with tolerances and pass/fail status
+- consolidated machine-readable [project summary](data/processed/project_summary.json) for rapid review of sample, inference, and model results
 - reproducible CDC/NCHS data download with checksum verification
 
 ## Primary outcome
@@ -91,6 +97,14 @@ Because the positive outcome is uncommon, a default probability cutoff of 0.50 y
 
 The repository also reports held-out discrimination and calibration diagnostics for **sex, race/ethnicity, and nativity** for the expanded logistic and gradient-boosting models. These diagnostics include subgroup sample sizes and positive counts so that very small groups are visible rather than silently summarized. They are intended as a responsible-model review aid, not as a claim that a model is fair or unfair for any group. See [`data/processed/model_subgroup_metrics.csv`](data/processed/model_subgroup_metrics.csv).
 
+### Example analytical decision
+
+The population-inference and predictive-modeling results answer different questions and should lead to different uses. For example, adults without health insurance have an estimated delayed-care prevalence of about **26.6%**, compared with about **5.1%** among covered adults. That is a large population-level disparity worth describing and investigating.
+
+The predictive models, however, should not be turned into an individual eligibility or intervention rule. The strongest benchmark reaches a weighted ROC-AUC of about **0.781**, and the highest-risk respondent decile contains about **42.4%** of weighted positive outcomes. Those results show useful risk concentration, but they also leave substantial overlap between respondents with and without reported delayed care.
+
+A defensible analytical use is therefore to treat the survey estimates as evidence about where access burdens are concentrated and the models as transparent benchmarking/risk-ranking tools—not as causal explanations or automated healthcare-access decisions.
+
 ## Analytical design
 
 **Core model:** age, sex, race/ethnicity, education, marital status, family composition, housing tenure, employment, nativity, insurance status, usual place of care, region, and urban-rural classification.
@@ -136,6 +150,7 @@ Reviews the nonlinear benchmark through permutation importance, weighted calibra
 │   │   ├── boosting_permutation_importance.csv
 │   │   ├── boosting_calibration.csv
 │   │   ├── boosting_risk_deciles.csv
+│   │   ├── project_summary.json
 │   │   └── ...
 │   └── README.md
 ├── notebooks/
@@ -196,7 +211,7 @@ Open the notebooks locally with:
 jupyter lab
 ```
 
-GitHub Actions repeats source download/checksum verification, the analytical rebuild, a tolerance-aware reproducibility check for tracked analytical outputs, the full Python validation suite, execution of all three review notebooks, and an independent cross-check of representative survey estimates with R's `survey` package on every push or pull request.
+GitHub Actions repeats source download/checksum verification, the analytical rebuild, generation of review figures and the consolidated project summary, a tolerance-aware reproducibility check for tracked analytical outputs, the full Python validation suite, execution of all three review notebooks, and an independent cross-check of representative survey estimates with R's `survey` package on every push or pull request. The R validation also regenerates an inspectable comparison table and verifies every recorded difference is within tolerance.
 
 ## Methodological guardrails
 
