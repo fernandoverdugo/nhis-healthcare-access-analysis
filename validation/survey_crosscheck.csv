@@ -1,0 +1,10 @@
+comparison,r_value,python_value,absolute_difference,tolerance,passed
+Overall point estimate,0.07046682116437372,0.07046682116437372,0,1e-09,True
+Overall standard error,0.0021862113356960465,0.0021862113356960465,0,1e-09,True
+Design degrees of freedom,562,562,0,0,True
+Not covered point estimate,0.2659437030200255,0.2659437030200255,0,1e-09,True
+Not covered standard error,0.013348413520275972,0.013348413520275972,0,1e-09,True
+No usual place of care point estimate,0.15017917899325672,0.15017917899325672,0,1e-09,True
+No usual place of care standard error,0.00979159729630553,0.00979159729630553,0,1e-09,True
+Poor general health point estimate,0.1723217324723106,0.1723217324723106,0,1e-09,True
+Poor general health standard error,0.015130334981835957,0.015130334981835957,0,1e-09,True
