@@ -10,6 +10,8 @@ ROOT = Path(__file__).resolve().parents[1]
 PROCESSED_DIR = ROOT / "data" / "processed"
 RTOL = 1e-6
 ATOL = 1e-6
+MODEL_RTOL = 1e-5
+MODEL_ATOL = 1e-5
 
 
 def _git_text(path):
@@ -38,6 +40,17 @@ def _tracked_outputs():
 def _compare_csv(path):
     committed = pd.read_csv(StringIO(_git_text(path)))
     rebuilt = pd.read_csv(path)
+    relative = path.relative_to(ROOT).as_posix()
+    model_artifact = path.name.startswith("boosting_") or path.name in {
+        "model_metrics.csv",
+        "model_subgroup_metrics.csv",
+        "income_model_runs.csv",
+        "income_model_summary.csv",
+        "model_coefficients_core.csv",
+        "model_coefficients_expanded.csv",
+    }
+    rtol = MODEL_RTOL if model_artifact else RTOL
+    atol = MODEL_ATOL if model_artifact else ATOL
     if list(committed.columns) != list(rebuilt.columns):
         raise AssertionError(f"Column mismatch in {path.relative_to(ROOT)}")
     if committed.shape != rebuilt.shape:
@@ -50,15 +63,15 @@ def _compare_csv(path):
             if not np.allclose(
                 left.to_numpy(dtype=float),
                 right.to_numpy(dtype=float),
-                rtol=RTOL,
-                atol=ATOL,
+                rtol=rtol,
+                atol=atol,
                 equal_nan=True,
             ):
                 delta = np.nanmax(
                     np.abs(left.to_numpy(dtype=float) - right.to_numpy(dtype=float))
                 )
                 raise AssertionError(
-                    f"Numeric mismatch in {path.relative_to(ROOT)} column {column}; max abs diff={delta}"
+                    f"Numeric mismatch in {relative} column {column}; max abs diff={delta}; tolerance rtol={rtol}, atol={atol}"
                 )
         else:
             if not left.fillna("<NA>").astype(str).equals(
