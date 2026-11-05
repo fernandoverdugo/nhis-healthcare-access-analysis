@@ -58,3 +58,15 @@ jobs:
 
       - name: Cross-check survey estimates with R survey
         run: Rscript validation/reference_survey_check.R
+
+      - name: Validate cross-check report
+        run: |
+          python - <<'PY'
+          import pandas as pd
+
+          report = pd.read_csv("validation/survey_crosscheck.csv")
+          assert len(report) >= 9
+          assert report["passed"].all()
+          assert (report["absolute_difference"] <= report["tolerance"]).all()
+          print(report.to_string(index=False))
+          PY
