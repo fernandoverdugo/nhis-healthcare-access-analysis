@@ -49,3 +49,38 @@ def test_readme_risk_svg_matches_current_concentration():
     svg = (ASSETS / "risk_concentration.svg").read_text()
     assert f"{deciles.loc[0, 'weighted_positive_share']:.1%}" in svg
     assert f"{deciles.loc[1, 'cumulative_weighted_positive_share']:.1%}" in svg
+
+
+def test_calibration_svg_matches_current_bins():
+    calibration = pd.read_csv(PROCESSED / "boosting_calibration.csv")
+    svg = (ASSETS / "calibration_diagnostics.svg").read_text()
+    for _, row in calibration.iterrows():
+        assert f"predicted {row['weighted_mean_predicted_probability']:.1%}" in svg
+        assert f"observed {row['weighted_observed_prevalence']:.1%}" in svg
+
+
+def test_subgroup_svg_matches_current_diagnostics():
+    subgroup = pd.read_csv(PROCESSED / "model_subgroup_metrics.csv")
+    svg = (ASSETS / "subgroup_model_diagnostics.svg").read_text()
+    for dimension in ["Sex", "Race/ethnicity", "Nativity"]:
+        assert dimension in svg
+    for _, row in subgroup.iterrows():
+        assert str(row["level"]) in svg
+        assert f"n={int(row['unweighted_n'])}, positives={int(row['unweighted_positives'])}" in svg
+
+
+def test_project_summary_matches_current_outputs():
+    summary = json.loads((PROCESSED / "project_summary.json").read_text())
+    overall = pd.read_csv(PROCESSED / "survey_overall.csv").iloc[0]
+    metrics = pd.read_csv(PROCESSED / "model_metrics.csv").set_index("model")
+    deciles = pd.read_csv(PROCESSED / "boosting_risk_deciles.csv")
+
+    assert abs(summary["population_inference"]["overall_prevalence"] - overall["weighted_prevalence"]) < 1e-12
+    assert abs(
+        summary["predictive_modeling"]["boosting_weighted_roc_auc"]
+        - metrics.loc["expanded_gradient_boosting", "weighted_roc_auc"]
+    ) < 1e-12
+    assert abs(
+        summary["predictive_modeling"]["boosting_top_decile_positive_capture"]
+        - deciles.loc[0, "weighted_positive_share"]
+    ) < 1e-12
