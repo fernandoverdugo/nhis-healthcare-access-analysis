@@ -4,6 +4,8 @@ root <- normalizePath(getwd())
 raw_file <- file.path(root, "data", "raw", "adult25.csv")
 overall_file <- file.path(root, "data", "processed", "survey_overall.csv")
 group_file <- file.path(root, "data", "processed", "survey_group_estimates.csv")
+crosscheck_file <- file.path(root, "validation", "survey_crosscheck.csv")
+crosscheck_rows <- list()
 
 adult <- read.csv(raw_file, stringsAsFactors = FALSE)
 adult$delayed_care_cost <- ifelse(
@@ -26,7 +28,17 @@ python_groups <- read.csv(group_file, stringsAsFactors = FALSE)
 
 check_close <- function(label, actual, expected, tolerance = 1e-9) {
   difference <- abs(actual - expected)
-  if (is.na(difference) || difference > tolerance) {
+  passed <- !is.na(difference) && difference <= tolerance
+  crosscheck_rows[[length(crosscheck_rows) + 1]] <<- data.frame(
+    comparison = label,
+    r_value = actual,
+    python_value = expected,
+    absolute_difference = difference,
+    tolerance = tolerance,
+    passed = passed,
+    stringsAsFactors = FALSE
+  )
+  if (!passed) {
     stop(
       sprintf(
         "%s mismatch: R survey=%.12f, Python=%.12f, abs diff=%.3e",
@@ -78,6 +90,15 @@ if (degf(design) != python_overall$design_df[1]) {
     )
   )
 }
+crosscheck_rows[[length(crosscheck_rows) + 1]] <- data.frame(
+  comparison = "Design degrees of freedom",
+  r_value = degf(design),
+  python_value = python_overall$design_df[1],
+  absolute_difference = abs(degf(design) - python_overall$design_df[1]),
+  tolerance = 0,
+  passed = degf(design) == python_overall$design_df[1],
+  stringsAsFactors = FALSE
+)
 cat(sprintf("Validated design degrees of freedom      R=%d Python=%d\n", degf(design), python_overall$design_df[1]))
 
 validate_group(
@@ -99,4 +120,7 @@ validate_group(
   "Poor"
 )
 
+crosscheck <- do.call(rbind, crosscheck_rows)
+write.csv(crosscheck, crosscheck_file, row.names = FALSE)
+cat(sprintf("Wrote %s\n", crosscheck_file))
 cat("Reference survey validation passed.\n")
