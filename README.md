@@ -25,7 +25,7 @@ Delaying medical care because of cost is a direct measure of healthcare-access d
 
 ![Held-out subgroup discrimination diagnostics](assets/subgroup_model_diagnostics.svg)
 
-## Portfolio highlights
+## Project highlights
 
 - 2025 NHIS Sample Adult analysis with **24,215 respondents**
 - survey-weighted prevalence estimates using the final annual weight, public stratum, and PSU variables
