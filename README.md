@@ -35,10 +35,10 @@ Delaying medical care because of cost is a direct measure of healthcare-access d
 - held-out logistic-regression baselines and one nonlinear gradient-boosting benchmark
 - weighted ROC-AUC, average precision, Brier score, log loss, calibration, and risk-concentration diagnostics
 - held-out permutation importance plus subgroup discrimination/calibration diagnostics for model interpretability and responsible review
-- **3 fully executed review notebooks** with rendered tables and linked SVG figures
+- **3 fully executed analysis notebooks** with rendered tables and linked SVG figures
 - automated source validation, analytical tests, notebook execution, and independent R `survey` cross-checks of representative survey estimates
 - committed [R-vs-Python survey cross-check table](validation/survey_crosscheck.csv) with tolerances and pass/fail status
-- consolidated machine-readable [project summary](data/processed/project_summary.json) for rapid review of sample, inference, and model results
+- consolidated machine-readable [project summary](data/processed/project_summary.json) summarizing sample, inference, and model results
 - reproducible CDC/NCHS data download with checksum verification
 
 ## Primary outcome
@@ -211,7 +211,7 @@ Open the notebooks locally with:
 jupyter lab
 ```
 
-GitHub Actions repeats source download/checksum verification, the analytical rebuild, generation of review figures and the consolidated project summary, a tolerance-aware reproducibility check for tracked analytical outputs, the full Python validation suite, execution of all three review notebooks, and an independent cross-check of representative survey estimates with R's `survey` package on every push or pull request. The R validation also regenerates an inspectable comparison table and verifies every recorded difference is within tolerance.
+GitHub Actions repeats source download/checksum verification, the analytical rebuild, generation of figures and the consolidated project summary, a tolerance-aware reproducibility check for tracked analytical outputs, the full Python validation suite, execution of all three analysis notebooks, and an independent cross-check of representative survey estimates with R's `survey` package on every push or pull request. The R validation also regenerates an inspectable comparison table and verifies every recorded difference is within tolerance.
 
 ## Methodological guardrails
 
