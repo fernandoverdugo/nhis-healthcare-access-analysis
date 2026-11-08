@@ -1,5 +1,7 @@
 # 2025 NHIS Healthcare Access Analysis
 
+[![Quality checks](https://github.com/fernandoverdugo/nhis-healthcare-access-analysis/actions/workflows/quality-checks.yml/badge.svg)](https://github.com/fernandoverdugo/nhis-healthcare-access-analysis/actions/workflows/quality-checks.yml)
+
 A reproducible Python project combining **complex-survey inference, multiple imputation, and predictive modeling** to examine cost-related delayed medical care among U.S. adults using the **2025 National Health Interview Survey (NHIS)**.
 
 The project deliberately separates two questions:
